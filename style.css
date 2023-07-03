@@ -1,0 +1,236 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Work Sans", sans-serif;
+  color: var(--colorWhite);
+}
+:root {
+  --colorPrimary: #0f172a;
+  --colorWhite: #e2e8f0;
+  --colorOffWhite: #94a3b8;
+  --colorAccent: #38bdf8;
+  --colorAccentAlternative: #78f838;
+}
+body {
+  background-color: var(--colorPrimary);
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
+}
+main,
+footer {
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--colorAccent);
+}
+h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--colorAccent);
+}
+h3 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+p {
+  line-height: 1.2;
+  color: var(--colorOffWhite);
+}
+
+a {
+  display: block;
+  line-height: 24px;
+  text-decoration: underline;
+  color: var(--colorOffWhite);
+  transition: all ease 0.2s;
+}
+a:hover {
+  text-decoration: none;
+}
+.intro {
+  display: block;
+}
+.intro img {
+  max-width: 80px;
+  border-radius: 100%;
+}
+main::before {
+  border-left: solid 1px var(--colorOffWhite);
+  padding: 0 0.5rem;
+  margin: 0.5rem 0.5rem 0.5rem 0.1rem;
+}
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.wrapper {
+  border-left: solid 1px var(--colorOffWhite);
+  padding: 0 0.5rem;
+  margin: 0.5rem 0.5rem 0.5rem 0.1rem;
+}
+
+.case {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.lkd::after {
+  display: none;
+  content: "";
+  background: url(assets/arrow-right.svg);
+  margin-left: 0.2rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  position: absolute;
+}
+
+.lkd::after:hover {
+  display: inline;
+}
+
+.case a::after {
+  content: "";
+  background: url(assets/arrow-right.svg);
+  margin-left: 0.2rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  position: absolute;
+}
+.case a:hover {
+  margin-left: 0.5rem;
+  transition: all ease 0.2s;
+}
+.avaliable::before {
+  display: inline-block;
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--colorAccentAlternative);
+  animation: blink-animation 1.5s infinite;
+  -webkit-animation: blink-animation 1.5s infinite;
+}
+
+button {
+  font-size: 1rem;
+  color: var(--colorOffWhite);
+  text-decoration: underline;
+  background-color: transparent;
+  width: fit-content;
+  border: none;
+}
+button:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+#copyContainer {
+  display: inline-block;
+}
+
+#copyMessage {
+  display: none;
+  color: var(--colorAccentAlternative);
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: #1a2e2c;
+  padding: 2px 4px;
+  border-radius: 4px;
+  margin-left: 4px;
+}
+
+@keyframes blink-animation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes blink-animation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* UTILITÁRIOS */
+.mt-1 {
+  margin-top: 1rem;
+}
+.mt-2 {
+  margin-top: 2rem;
+}
+.mb-1 {
+  margin-bottom: 1rem;
+}
+.mb-2 {
+  margin-bottom: 2rem;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.text-primary {
+  color: var(--color-primary);
+}
+.text-center {
+  text-align: center;
+}
+
+footer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+  main,
+  footer {
+    max-width: 100%;
+  }
+
+  /* Add any other mobile-specific styles you want */
+}
+
+.hoverIcon {
+  display: flex;
+  align-items: center;
+}
+
+.hoverIcon img {
+  opacity: 0;
+  width: 16px;
+  transform: translateX(-8px); /* Move the icon 8 pixels to the left */
+  transition: all 0.3s ease;
+}
+.hoverIcon:hover img {
+  opacity: 1;
+  transform: translateX(4px);
+  transition: all 0.3s ease;
+}
